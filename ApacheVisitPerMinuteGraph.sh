@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VISIT_PER_MINUTE=$(cat blitzquotidiano.it_access_log.1 | cut -d "[" -f2 | cut -d "]" -f1 | awk '{print $1}' | awk -F ':' '{print $2":"$3}' | sort -k 1,2 | uniq -c)
+VISIT_PER_MINUTE=$(cat access_log.1 | cut -d "[" -f2 | cut -d "]" -f1 | awk '{print $1}' | awk -F ':' '{print $2":"$3}' | sort -k 1,2 | uniq -c)
 MAX_VISIT_PER_MINUTE=0
 LINEA=100
 
